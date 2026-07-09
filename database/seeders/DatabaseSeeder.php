@@ -27,5 +27,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
         ]);
+         User::factory()->create([
+            'name' => 'Maga Team',
+            'email' => 'team@maga.com',
+            'password' => bcrypt('password'),
+        ]);
     }
 }
