@@ -18,6 +18,12 @@ class Category extends Model
         'icon',
     ];
 
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = \Str::slug($value);
+    }
+
     public function news(): HasMany
     {
         return $this->hasMany(ArticleNews::class);
