@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\ArticleNews;
 use App\Models\Author;
+use App\Models\BannerAds;
 
 class FrontController extends Controller
 {
@@ -28,7 +29,14 @@ class FrontController extends Controller
         
         $authors = Author::all();
 
-        return view('front.index', compact('categories', 'articles','authors', 'featured_articles'));
+        $bannerads = BannerAds::where('is_active', 'active')
+        ->where('type', 'banner')
+            ->inRandomOrder()
+            // ->take(1)
+            // ->get();
+            ->first();
+
+        return view('front.index', compact('categories', 'articles','authors', 'featured_articles','bannerads'));
     }
 
     public function details()
