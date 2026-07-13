@@ -18,11 +18,17 @@ class FrontController extends Controller
             ->where('is_featured', 'not_featured')
             ->latest()
             ->take(3)
+            ->get(); 
+
+        $featured_articles = ArticleNews::with('category')
+            ->where('is_featured', 'featured')
+            ->inRandomOrder()
+            ->take(3)
             ->get();
         
         $authors = Author::all();
 
-        return view('front.index', compact('categories', 'articles','authors'));
+        return view('front.index', compact('categories', 'articles','authors', 'featured_articles'));
     }
 
     public function details()
