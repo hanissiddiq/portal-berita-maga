@@ -12,9 +12,12 @@
 </head>
 
 <body class="font-[Poppins] pb-[83px]">
-	<nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
+
+	<x-navbar />
+
+	{{-- <nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
 		<div class="logo-container flex gap-[30px] items-center">
-			<a href="index.html" class="flex shrink-0">
+			<a href="{{ route('front.index') }}" class="flex shrink-0">
 				<img src="{{ asset('assets/images/logos/logo.svg') }}" alt="logo" />
 			</a>
 			<div class="h-12 border border-[#E8EBF4]"></div>
@@ -40,7 +43,8 @@
 				<span>Post Ads</span>
 			</a>
 		</div>
-	</nav>
+	</nav> --}}
+
 	<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
 		<a href="categoryPage.html"
 			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
@@ -92,6 +96,8 @@
 			<span>Sport</span>
 		</a>
 	</nav>
+
+	
 	<section id="Category-result" class="max-w-[1130px] mx-auto flex items-center flex-col gap-[30px] mt-[70px]">
 		<h1 class="text-4xl leading-[45px] font-bold text-center">
 			Explore Our <br />
