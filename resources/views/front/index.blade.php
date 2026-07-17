@@ -11,7 +11,10 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body class="font-[Poppins] pb-[72px]">
-		<nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
+		
+		<x-navbar />
+
+		{{-- <nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
 			<div class="logo-container flex gap-[30px] items-center">
 				<a href="index.html" class="flex shrink-0">
 					<img src="{{ asset('assets/images/logos/logo.svg') }}" alt="logo" />
@@ -33,7 +36,7 @@
 					<span>Post Ads</span>
 				</a>
 			</div>
-		</nav>
+		</nav> --}}
 		<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
             @foreach ($categories as $category)
                 <a href="{{ route('front.category',$category->slug) }}" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
