@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('front.master')
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="{{ asset('css/output.css') }}" rel="stylesheet" />
-	<link href="{{ asset('css/main.css') }}" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-		rel="stylesheet" />
-        <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@section('content')
 
 <body class="font-[Poppins] pb-[83px]">
 
@@ -45,7 +36,7 @@
 		</div>
 	</nav> --}}
 
-	<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
+	{{-- <nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
 		<a href="categoryPage.html"
 			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
 			<div class="w-6 h-6 flex shrink-0">
@@ -95,6 +86,18 @@
 			</div>
 			<span>Sport</span>
 		</a>
+	</nav> --}}
+
+	<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
+            @foreach ($categories as $itemcategory)
+                <a href="{{ route('front.category',$itemcategory->slug) }}" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
+                    <div class="w-6 h-6 flex shrink-0">
+                        {{-- <img src="{{ asset('assets/images/icons/heart.svg') }}" alt="icon" /> --}}
+                        <img src="{{ Storage::url($itemcategory->icon) }}" alt="icon" />
+                    </div>
+                    <span>{{ $itemcategory->name }}</span>
+                </a>
+            @endforeach
 	</nav>
 
 	
@@ -153,5 +156,7 @@
 		</div>
 	</section>
 </body>
-
-</html>
+@endsection
+@push('after-scripts')
+	<script src="https://cdn.tailwindcss.com"></script>
+@endpush
