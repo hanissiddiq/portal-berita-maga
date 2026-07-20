@@ -54,9 +54,42 @@ class FrontController extends Controller
         return view('front.index', compact('entertainment_articles', 'entertainment_featured_articles', 'categories', 'articles','authors', 'featured_articles','bannerads'));
     }
 
-    public function details()
+    public function details(ArticleNews $articleNews)
     {
-        return view('front.details');
+        $categories = Category::all();
+
+        $article = ArticleNews::with('category')
+            ->where('is_featured', 'not_featured')
+            ->where('id', '!=', $articleNews->id) // Exclude the current article
+            ->latest()
+            ->take(3)
+            ->get(); 
+
+        $bannerads = BannerAds::where('is_active', 'active')
+        ->where('type', 'banner')
+            ->inRandomOrder()            
+            ->first();
+
+        $squareads = BannerAds::where('is_active', 'active')
+        ->where('type', 'square')
+            ->inRandomOrder()            
+            ->take(2)
+            ->get();  
+            
+        if($squareads->count() < 2) {
+            $squareads1 = $squareads->first();
+            $squareads2 = null;
+        } else {
+            $squareads1 = $squareads->get(0);
+            $squareads2 = $squareads->get(1);
+        }
+
+        $author_news = ArticleNews::where('author_id', $articleNews->author_id)
+            ->where('id', '!=', $articleNews->id) // Exclude the current article
+            ->inRandomOrder()
+            ->get();
+
+        return view('front.details', compact('articleNews','article','categories','bannerads', 'squareads','squareads1', 'squareads2', 'author_news'));
     }
 
     public function category(Category $category)
