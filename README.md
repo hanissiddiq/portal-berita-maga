@@ -1,59 +1,346 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📰 Portal Berita Maga
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Portal Berita Maga adalah sistem manajemen konten (CMS) portal berita modern yang dibangun menggunakan **Laravel 12** dan **Filament Admin Panel**. Aplikasi ini memungkinkan administrator mengelola artikel, kategori, penulis, serta banner iklan melalui dashboard admin yang intuitif, sekaligus menyajikan portal berita yang responsif dan SEO-friendly untuk pengunjung.
 
-## About Laravel
+<img width="1735" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b0354ccb-4ce8-4e12-a160-7e19b870e0a5" /> <br>
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Laravel 12
+- PHP 8.2+
+- Filament Admin Panel v3
+- MySQL / MariaDB
+- Blade Template Engine
+- Tailwind CSS
+- Vite
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Fitur
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Frontend
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 📰 Homepage Berita
+- 📄 Detail Artikel
+- ⭐ Artikel Unggulan
+- 🆕 Artikel Terbaru
+- 📂 Kategori Berita
+- 🔍 SEO Friendly URL (Slug)
+- 📱 Responsive Layout
+- 📢 Banner Ads
+- 🖼️ Square Ads
 
-## Laravel Sponsors
+### Admin Panel
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Dashboard Filament
+- Manajemen Artikel
+- Manajemen Kategori
+- Manajemen Penulis
+- Manajemen Banner Iklan
+- Upload Thumbnail
+- Rich Text Editor
+- Featured Article
+- Soft Delete Data
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📁 Struktur Project
 
-## Contributing
+```
+portal-berita-maga/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+├── routes/
+├── storage/
+├── tests/
+├── vendor/
+├── composer.json
+├── package.json
+└── README.md
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 📦 Persyaratan Sistem
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Software | Versi |
+|----------|--------|
+| PHP | >= 8.2 |
+| Composer | Terbaru |
+| Node.js | >= 20 |
+| NPM | Terbaru |
+| MySQL | 8+ |
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# ⚙️ Instalasi
 
-## License
+## 1. Clone Repository
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/username/portal-berita-maga.git
+
+cd portal-berita-maga
+```
+
+---
+
+## 2. Install Dependency
+
+```bash
+composer install
+```
+
+```bash
+npm install
+```
+
+---
+
+## 3. Copy Environment
+
+Linux / Mac
+
+```bash
+cp .env.example .env
+```
+
+Windows
+
+```cmd
+copy .env.example .env
+```
+
+---
+
+## 4. Generate Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## 5. Konfigurasi Database
+
+Edit file `.env`
+
+```env
+APP_NAME="Portal Berita Maga"
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_portal_berita
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## 6. Jalankan Migration
+
+```bash
+php artisan migrate
+```
+
+Jika tersedia Seeder
+
+```bash
+php artisan db:seed
+```
+
+---
+
+## 7. Storage Link
+
+```bash
+php artisan storage:link
+```
+
+---
+
+## 8. Jalankan Vite
+
+Development
+
+```bash
+npm run dev
+```
+
+Production
+
+```bash
+npm run build
+```
+
+---
+
+## 9. Menjalankan Aplikasi
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+# 🔐 Dashboard Admin
+
+```
+http://127.0.0.1:8000/admin
+```
+
+Membuat akun administrator:
+
+```bash
+php artisan make:filament-user
+```
+
+---
+
+# 📰 Modul Artikel
+
+- Judul Artikel
+- Slug Otomatis
+- Thumbnail
+- Konten Berita
+- Kategori
+- Penulis
+- Artikel Unggulan
+- Soft Delete
+
+---
+
+# 📂 Modul Kategori
+
+- Tambah Kategori
+- Edit Kategori
+- Hapus Kategori
+
+---
+
+# 👤 Modul Penulis
+
+- Nama Penulis
+- Foto Penulis
+- Profil Penulis
+
+---
+
+# 📢 Modul Banner Ads
+
+Mendukung dua jenis banner:
+
+### Banner
+
+Banner utama yang tampil pada halaman depan.
+
+### Square
+
+Banner berbentuk persegi yang tampil pada halaman detail artikel.
+
+Status banner:
+
+- Active
+- Inactive
+
+---
+
+# 📌 Routing
+
+| URL | Keterangan |
+|------|------------|
+| `/` | Homepage |
+| `/details/{slug}` | Detail Artikel |
+| `/category/{slug}` | Artikel Berdasarkan Kategori |
+| `/admin` | Dashboard Admin |
+
+---
+
+# 🔧 Perintah Artisan
+
+Clear Cache
+
+```bash
+php artisan optimize:clear
+```
+
+Cache Config
+
+```bash
+php artisan config:cache
+```
+
+Cache Route
+
+```bash
+php artisan route:cache
+```
+
+Cache View
+
+```bash
+php artisan view:cache
+```
+
+---
+
+# 🧪 Testing
+
+```bash
+php artisan test
+```
+
+---
+
+# 📄 Lisensi
+
+Project ini menggunakan framework Laravel yang berlisensi **MIT License**.
+
+---
+# Preview
+<img width="1382" height="2460" alt="Image" src="https://github.com/user-attachments/assets/56062421-98ae-4722-ab61-9d9df01a4f42" />
+---
+
+---
+# Preview Admin
+<img width="1600" height="818" alt="image" src="https://github.com/user-attachments/assets/9cf5e9b4-edf3-4b5e-bf43-76ad16b5069a" /><br>
+<img width="1598" height="811" alt="image" src="https://github.com/user-attachments/assets/b4df590e-8744-42bb-a124-4633141e7b8d" /><br>
+<img width="1597" height="819" alt="image" src="https://github.com/user-attachments/assets/01247c09-3bf9-4190-a987-1fd253e067cf" /><br>
+
+#UseradminDefault
+| email | Pass |
+|------|------------|
+| `team@maga.com` | password |
+
+---
+
+
+# 👨‍💻 Developer
+
+**Portal Berita Maga** dikembangkan menggunakan:
+
+- Laravel 12
+- Filament Admin Panel v3
+- Blade
+- Tailwind CSS
+- MySQL
+- Vite
+
+---
+
+© 2026 Portal Berita Maga. All Rights Reserved.
